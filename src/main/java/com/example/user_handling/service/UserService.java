@@ -14,6 +14,10 @@ public class UserService{
 	@Autowired
 	private UserDao userDao;
 	
+	public User getUserById(Long id) {
+		return userDao.findById(id).orElse(null);
+	}
+	
 	public List<User> getAllUsers(){
 		return userDao.findAll();
 	}

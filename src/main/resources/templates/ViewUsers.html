@@ -1,6 +1,8 @@
+
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
+
 <meta charset="UTF-8">
 <title>View Users</title>
 <link rel="stylesheet"
@@ -13,8 +15,40 @@
 </head>
 <body>
 	<div class="container">
-		<h1 class="p-3">View Users</h1>
+		<h1 class="p-3">Users List</h1>
 
+		<table class="table table-bordered">
+			<tr>
+				<th>Id</th>
+				<th>First Name</th>
+				<th>Last Name</th>
+				<th>Email</th>
+				<th>Birth Date</th>
+				<th>Gender</th>
+				<th>Edit</th>
+				<th>Delete</th>
+			</tr>
+			<tr th:each="user : ${usersList}">
+				<td th:text="${user.id}"></td>
+				<td th:text="${user.firstName}"></td>
+				<td th:text="${user.lastName}"></td>
+				<td th:text="${user.email}"></td>
+				<td th:text="${user.bd}"></td>			
+				<td th:text="${user.gender}"></td>
+				
+				<td>
+					<a th:href="@{/edituser/{id}(id=${user.id})}" class="btn btn-success" role="button">Edit</a>
+				</td>
+				
+				<td>
+					<a th:href="@{/deleteuser/{id}(id=${user.id})}" class="btn btn-danger" role="button">Delete</a>
+				</td> 
+			</tr>
+		</table>
+		<div class = "text-center">
+			<a href="/addUser" class="btn btn-primary btn-block" role="button">New User</a>
+		</div>
+		
 	</div>
 
 </body>
