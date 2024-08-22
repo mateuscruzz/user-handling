@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
 <title>Add user</title>
@@ -43,15 +43,13 @@
 
 						<div class="form-check-inLine">
 							<label class="form-check-label"> <input type="radio"
-								th:field="*{gender}" id="lastName" class="form-check-input"
-								th:field="*{gender}" value="Male" />Male
+							class="form-check-input" th:field="*{gender}" value="Male" />Male
 							</label>
 						</div>
 
 						<div class="form-check-inLine">
-							<label class="form-check-label"> <input type="radio"
-								th:field="*{gender}" id="lastName" class="form-check-input"
-								th:field="*{gender}" value="Female" />Female
+							<label class="form-check-label"> <input type="radio" 
+							class="form-check-input" th:field="*{gender}" value="Female" />Female
 							</label>
 						</div>
 
