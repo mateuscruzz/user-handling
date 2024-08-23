@@ -15,7 +15,7 @@
 </head>
 <body>
 	<div class="container">
-		<h1 class="p-3">Users List</h1>
+		<h1 class="text-center display-3 fw-bold">Users List</h1>
 
 		<table class="table table-bordered">
 			<tr>
@@ -37,7 +37,8 @@
 				<td th:text="${user.gender}"></td>
 
 				<td><a th:href="@{/editUser/{id}(id=${user.id})}"
-					class="btn btn-success" role="button">Edit</a></td>
+					class="btn btn-success" role="button">Edit</a>
+				</td>
 
 				<td>
 					<form th:action="@{/deleteUser/{id}(id=${user.id})}" method="post"
